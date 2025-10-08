@@ -5,7 +5,9 @@ from models.evaluator import *
 print(torch.cuda.is_available())
 
 import torch.serialization
-torch.serialization.add_safe_globals(["numpy._core.multiarray.scalar"])
+import numpy as np
+import torch.serialization
+torch.serialization.add_safe_globals([np.core.multiarray.scalar])
 
 """
 eval the CD model
