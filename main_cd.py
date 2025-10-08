@@ -1,6 +1,8 @@
 from argparse import ArgumentParser
 import torch
 from models.trainer import *
+import torch.serialization
+torch.serialization.add_safe_globals(["numpy._core.multiarray.scalar"])
 
 print(torch.cuda.is_available())
 
